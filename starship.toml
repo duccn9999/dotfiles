@@ -1,0 +1,51 @@
+format = """
+$username $directory $git_branch$git_status
+"""
+
+right_format = """
+$time
+"""
+
+# -------------------
+# USERNAME
+# -------------------
+
+[username]
+show_always = true
+style_user = "fg:#d8dee9"
+style_root = "fg:#d8dee9"
+format = "[$user@host]($style)"
+
+# -------------------
+# DIRECTORY
+# -------------------
+
+[directory]
+style = "fg:#81a1c1"
+format = "[$path]($style)"
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+# -------------------
+# GIT
+# -------------------
+
+[git_branch]
+symbol = ""
+style = "fg:#a3be8c"
+format = "[ git:$branch ]($style)"
+
+[git_status]
+style = "fg:#bf616a"
+format = "[$all_status$ahead_behind]($style)"
+
+# -------------------
+# TIME
+# -------------------
+
+[time]
+disabled = false
+time_format = "%H:%M"
+style = "fg:#d8dee9"
+format = "[$time]($style)"

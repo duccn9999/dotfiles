@@ -1,0 +1,84 @@
+[mgr]
+cwd = { fg = "#d8dee9" }
+
+hovered = { fg = "#3b4252", bg = "#d8dee9" }
+preview_hovered = { fg = "#3b4252", bg = "#d8dee9" }
+
+find_keyword = { fg = "#d8dee9" }
+find_position = { fg = "#3b4252", bg = "#d8dee9" }
+
+marker_copied = { fg = "#d8dee9", bg = "#d8dee9" }
+marker_cut = { fg = "#d8dee9", bg = "#d8dee9" }
+marker_selected = { fg = "#d8dee9", bg = "#d8dee9" }
+
+symlink_target = { fg = "#3b4252", bg = "#d8dee9" }
+
+border_style = { fg = "#d8dee9" }
+border_symbol = "│"  
+[tab]
+active    = { bg = "#d8dee9", fg = "#3b4252" }
+inactive  = { bg = "#333333", fg = "#d4d0c8" }
+sep_inner = { open = "[", close = "]" }
+sep_outer = { open = "", close = "" }
+
+[indicator]
+parent  = { fg = "#3b4252", bg = "#d8dee9" }
+current = { fg = "#3b4252", bg = "#d8dee9" }
+preview = { fg = "#3b4252", bg = "#d8dee9" }
+padding = { open = "█", close = "█" }
+
+[status]
+sep_left = { open = "█", close = "█", bg = "#d8dee9" }
+sep_right = { open = "█", close = "█", bg = "#d8dee9" }
+
+[filetype]
+rules = [
+	# Image
+	{ mime = "image/*", fg = "#d8dee9" },
+	# Video
+	{ mime = "{audio,video}/*", fg = "#d8dee9" },
+	# Empty file
+	{ mime = "inode/empty", fg = "#d8dee9" },
+	# Orphan symbolic links
+	{ url = "*", is = "orphan", fg = "#d8dee9" },
+	# Fallback
+	# { url = "*", fg = "white" },
+	{ url = "*/", fg = "#d8dee9" }
+]
+
+
+[icon]
+
+dirs = [
+	{ name = ".config", text = "", fg = "#d8dee9" },
+	{ name = ".git", text = "", fg = "#d8dee9" },
+	{ name = ".github", text = "", fg = "#d8dee9" },
+	{ name = ".npm", text = "", fg = "#d8dee9" },
+	{ name = "Desktop", text = "", fg = "#d8dee9" },
+	{ name = "Development", text = "", fg = "#d8dee9" },
+	{ name = "Documents", text = "", fg = "#d8dee9" },
+	{ name = "Downloads", text = "", fg = "#d8dee9" },
+	{ name = "Library", text = "", fg = "#d8dee9" },
+	{ name = "Movies", text = "", fg = "#d8dee9" },
+	{ name = "Music", text = "", fg = "#d8dee9" },
+	{ name = "Pictures", text = "", fg = "#d8dee9" },
+	{ name = "Public", text = "", fg = "#d8dee9" },
+	{ name = "Videos", text = "", fg = "#d8dee9" },
+]
+conds = [
+	# Special files
+	{ if = "orphan", text = "", fg = "#d8dee9" },
+	{ if = "link", text = "", fg = "#d8dee9" },
+	{ if = "block", text = "", fg = "#d8dee9" },
+	{ if = "char", text = "", fg = "#d8dee9" },
+	{ if = "fifo", text = "", fg = "#d8dee9" },
+	{ if = "sock", text = "", fg = "#d8dee9" },
+	{ if = "sticky", text = "", fg = "#d8dee9" },
+	{ if = "dummy", text = "", fg = "#d8dee9" },
+
+	# Fallback
+	{ if = "dir & hovered", text = "", fg = "#d8dee9" },
+	{ if = "dir", text = "", fg = "#d8dee9" },
+	{ if = "exec", text = "", fg = "#d8dee9" },
+	{ if = "!dir", text = "", fg = "#d8dee9" },
+]

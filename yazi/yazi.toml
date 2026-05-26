@@ -1,0 +1,9 @@
+[mgr]
+sort_by = "mtime"
+sort_sensitive = true
+show_hidden = true
+linemode = "none"
+style = "square"
+
+[preview]
+wrap = "no"
