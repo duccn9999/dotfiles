@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 40,
+  "height": 36,
 
   "modules-left": ["niri/workspaces", "wlr/taskbar"],
 
@@ -69,12 +69,6 @@
     "format": "{index}",
   },
 
-  "custom/start": {
-    "format": "Start",
-    "on-click": "wlogout",
-    "tooltip": false,
-  },
-
   "wlr/taskbar": {
     "format": "{icon}",
     "icon-size": 18,
@@ -84,5 +78,11 @@
 
     "tooltip": false,
     "all-outputs": true,
+  },
+
+  "custom/start": {
+    "format": "⏻",
+    "on-click": "wlogout",
+    "tooltip": false,
   },
 }

@@ -1,16 +1,16 @@
 * {
-font-family: "JetBrainsMono Nerd Font";
+  font-family: "JetBrainsMono Nerd Font";
 }
 
 window {
-  background-color: rgba(0, 0, 0, 0.40);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 button {
   background-image: none;
 
-  min-width: 180px;
-  min-height: 180px;
+  min-width: 45px;
+  min-height: 45px;
 
   margin: 18px;
   padding: 40px;
@@ -51,21 +51,21 @@ button:active {
 /* icon colors */
 
 #lock {
-color: black;
+  color: black;
 }
 
 #logout {
-color: black;
+  color: black;
 }
 
 #suspend {
-color: black;
+  color: black;
 }
 
 #reboot {
-color: black;
+  color: black;
 }
 
 #shutdown {
-color: black;
+  color: black;
 }

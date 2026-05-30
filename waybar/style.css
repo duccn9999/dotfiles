@@ -3,7 +3,7 @@
   border-radius: 0;
   font-family: "JetBrainsMonoNL Nerd Font Mono";
   font-size: 15px;
-  min-height: 34px;
+  min-height: 30px;
 }
 
 window#waybar {
@@ -45,8 +45,7 @@ window#waybar {
 #custom-start {
   margin: 4px 4px;
   padding: 0 14px;
-  background: #d8dee9;
-  color: #2e3440;
+  color: #d8dee9;
 }
 /* TOOLTIP */
 
