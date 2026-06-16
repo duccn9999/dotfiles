@@ -1,6 +1,7 @@
 vim.keymap.set("n", "<C-tab>", "<cmd>bnext<CR>", { desc = "Next tab" })
 vim.keymap.set("n", "<C-q>", "<cmd>bdelete<CR>", { desc = "Next tab" })
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all" })
+vim.keymap.set("n", "<C-t>", "<cmd>term<CR>", { desc = "Open terminal" })
 vim.keymap.set("n", "<leader>e", "<cmd>:Ex<CR>", { desc = "Open tree" })
 vim.keymap.set("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end,

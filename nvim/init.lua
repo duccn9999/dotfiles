@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 2
@@ -14,8 +13,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.diagnostic.config({
   vitual_text = true,
 })
--- [[ theme ]]
-vim.cmd.colorscheme("retrobox")
+-- [[ theme ]
+vim.cmd.colorscheme("wildcharm")
 require("packs")
 require("tabline")
 require("keymaps")
