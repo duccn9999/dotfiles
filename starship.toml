@@ -1,51 +1,44 @@
-format = """
-$username $directory $git_branch$git_status
+add_newline = false
+format = """\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$character
 """
+    right_format = """$time"""
 
-right_format = """
-$time
-"""
+    [username]
+    show_always = true
+    style_user = "fg:black bg:bright-black bold"
+    format = "[ $user@host ]($style)(fg:blue bg:green)[▕](fg:yellow bg:bright-black)"
 
-# -------------------
-# USERNAME
-# -------------------
+    [directory]
+    style = "fg:black bg:green bold"
+    truncation_length = 3
+    truncate_to_repo = false
+    format = "[ $path ]($style)(fg:green bg:bright-black)[▕](fg:yellow bg:green)"
 
-[username]
-show_always = true
-style_user = "fg:#d8dee9"
-style_root = "fg:#d8dee9"
-format = "[$user@host]($style)"
+    [git_branch]
+    symbol = " "
+    style = "fg:black bg:purple bold"
+    format = "[ $symbol$branch ]($style)"
 
-# -------------------
-# DIRECTORY
-# -------------------
+    [git_status]
+    style = "fg:red bold"
+    modified = "!"
+    staged = "+"
+    untracked = "?"
+    deleted = "✘"
+    renamed = "»"
+    format = "[$all_status$ahead_behind]($style)"
 
-[directory]
-style = "fg:#81a1c1"
-format = "[$path]($style)"
-truncation_length = 3
-truncate_to_repo = false
-truncation_symbol = "…/"
+    [character]
+    success_symbol = "[ ✔ ](fg:blue bold)"
+    error_symbol = "[ ✘ ](fg:red bold)"
 
-# -------------------
-# GIT
-# -------------------
-
-[git_branch]
-symbol = ""
-style = "fg:#a3be8c"
-format = "[ git:$branch ]($style)"
-
-[git_status]
-style = "fg:#bf616a"
-format = "[$all_status$ahead_behind]($style)"
-
-# -------------------
-# TIME
-# -------------------
-
-[time]
-disabled = false
-time_format = "%H:%M"
-style = "fg:#d8dee9"
-format = "[$time]($style)"
+    [time]
+    disabled = false
+    time_format = "%H:%M"
+    style = "fg:#d8dee9"
+    format = "[$time]($style)"
