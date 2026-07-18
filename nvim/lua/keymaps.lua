@@ -7,7 +7,7 @@ vim.keymap.set("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap 
 vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end,
 { desc = "Previous diagnostic" })
 vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Next diagnostic" })
-
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 local telescope = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope.find_files, {
   desc = "Telescope find files",

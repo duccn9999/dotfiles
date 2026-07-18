@@ -3,9 +3,6 @@ local M = {}
 
 
 local SEP = ""
-
-local CLOSE = ""
-
 local NO_NAME = "[UNDEFINED]"
 
 
@@ -78,7 +75,6 @@ local function render_buf(bufnr, current)
 
       " %#MyBufClose#",
 
-      CLOSE,
 
       " %#MyBufSeparator#",
 

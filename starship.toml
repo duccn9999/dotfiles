@@ -1,44 +1,44 @@
-add_newline = false
-format = """\
-$username\
-$directory\
-$git_branch\
-$git_status\
-$character
-"""
-    right_format = """$time"""
+add_newline = true
 
+format = """
+$username\
+    [](fg:#313244 bg:#cba6f7)\
+    $directory\
+    [](fg:#cba6f7 bg:#f5c2e7)\
+    $git_branch\
+    [](fg:#f5c2e7 bg:none)\
+    $git_status\
+    $character\
+    """
+    right_format = """$time
+    """
     [username]
     show_always = true
-    style_user = "fg:black bg:bright-black bold"
-    format = "[ $user@host ]($style)(fg:blue bg:green)[▕](fg:yellow bg:bright-black)"
+    format = "[  $user@host ](bg:#313244 fg:#cba6f7 bold)"
 
     [directory]
-    style = "fg:black bg:green bold"
     truncation_length = 3
     truncate_to_repo = false
-    format = "[ $path ]($style)(fg:green bg:bright-black)[▕](fg:yellow bg:green)"
+    truncation_symbol = "…/"
+    format = "[ 󰉋 $path ](bg:#cba6f7 fg:#2D353B bold)"
 
     [git_branch]
     symbol = " "
-    style = "fg:black bg:purple bold"
-    format = "[ $symbol$branch ]($style)"
+    format = "[ $symbol$branch](bg:#f5c2e7 fg:#2D353B bold)"
 
     [git_status]
-    style = "fg:red bold"
+    style = "fg:#E67E80 bold"
     modified = "!"
     staged = "+"
     untracked = "?"
     deleted = "✘"
     renamed = "»"
-    format = "[$all_status$ahead_behind]($style)"
 
     [character]
-    success_symbol = "[ ✔ ](fg:blue bold)"
-    error_symbol = "[ ✘ ](fg:red bold)"
+    success_symbol = "[ ∼ ](bold #D699B6)"
+    error_symbol = "[ 󰅖 ](bold #E67E80)"
 
     [time]
     disabled = false
     time_format = "%H:%M"
-    style = "fg:#d8dee9"
-    format = "[$time]($style)"
+    format = "[  $time ](fg:#3A94C5)"

@@ -54,8 +54,8 @@ require("telescope").setup({
     },
     mappings = {
       i = {
-	["<C-,>"] = require("telescope.actions").move_selection_previous,
-	["<C-.>"] = require("telescope.actions").move_selection_next,
+	["<C-k>"] = require("telescope.actions").move_selection_previous,
+	["<C-j>"] = require("telescope.actions").move_selection_next,
       },
     }
   }
@@ -80,7 +80,8 @@ local languages = {
   "typescript",
   "yaml",
   "rust",
-  "json"
+  "json",
+  "cpp"
 }
 treesitter.setup({
   highlight = { enable = true },
@@ -107,6 +108,7 @@ vim.lsp.config("lua_ls", {
       format = {
 	enable = true,
       },
+      hint = { enable = true }
     },
   },
 })
@@ -116,13 +118,19 @@ vim.lsp.config("rust_analyzer", {
   filetypes = { "rust" },
   root_markers = { "Cargo.toml" },
   settings = {
-    ["rust-analyzer"] = {},
+    ["rust-analyzer"] = {
+      diagnostics = {
+	enable = true,
+      }
+    }
   },
 })
+
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("rust_analyzer")
-
+vim.lsp.enable("clangd")
+vim.lsp.enable("gopls")
 -- [[ snippet / completion ]]
 vim.pack.add({ "https://github.com/saghen/blink.lib", "https://github.com/saghen/blink.cmp" })
 local cmp = require("blink.cmp")
@@ -130,12 +138,10 @@ cmp.build()
 cmp.setup({
   keymap = {
     preset = "none",
-
-    ['<C-,>'] = { 'select_prev', 'fallback' },
-    ['<C-.>'] = { 'select_next', 'fallback' },
-
     ['<Tab>'] = { "accept", "fallback" },
     ['<CR>'] = { "accept", "fallback" },
+    ['<C-k>'] = { 'select_prev', 'fallback' },
+    ['<C-j>'] = { 'select_next', 'fallback' },
   },
   sources = {
     default = { "lsp", "path", "snippets", "buffer" }
@@ -145,3 +151,14 @@ cmp.setup({
     documentation = { auto_show = true }
   }
 })
+
+
+-- [[ comment ]]
+
+vim.pack.add({ "https://github.com/numToStr/Comment.nvim" })
+require('Comment').setup({
+  padding = true,
+})
+
+-- [[ snippets ]]
+vim.pack.add({ "https://github.com/rafamadriz/friendly-snippets" })

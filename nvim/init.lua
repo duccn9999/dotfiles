@@ -6,16 +6,17 @@ vim.opt.numberwidth = 2
 vim.opt.shiftwidth = 2
 vim.opt.ignorecase = true
 vim.opt.autowrite = true
-vim.opt.guifont = "JetBrainsMono Nerd Font Mono"
+vim.opt.guifont = "JetBrains Nerd Font Mono"
 vim.opt.icon = true
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.updatetime = 250
 vim.diagnostic.config({
-  vitual_text = true,
+  update_in_insert = true,
+  virtual_text = true, -- disable so it doesn't show both
 })
--- [[ theme ]
-vim.cmd.colorscheme("wildcharm")
 require("packs")
 require("tabline")
 require("keymaps")
 require("autocmds")
+vim.cmd.colorscheme("catppuccin")

@@ -3,8 +3,8 @@ return {
   lazy = false,
   build = ':TSUpdate',
   config = function()
-  local configs = require('nvim-treesitter')
-      local languages = {
+    local configs = require('nvim-treesitter')
+    local languages = {
       "bash",
       "css",
       "dockerfile",
@@ -20,11 +20,11 @@ return {
       "yaml",
       "rust",
     }
-  configs.setup({
-    highlight = { enable = true },
-    indent = { enable = true },
-    autotage = { enable = true },
-  })
-  configs.install(languages)
+    configs.setup({
+      highlight = { enable = true },
+      indent = { enable = true },
+      autotage = { enable = true },
+    })
+    configs.install(languages)
   end,
 }
