@@ -1,5 +1,6 @@
-vim.keymap.set("n", "<C-tab>", "<cmd>bnext<CR>", { desc = "Next tab" })
-vim.keymap.set("n", "<C-q>", "<cmd>bdelete<CR>", { desc = "Next tab" })
+vim.keymap.set("n", "<C-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<C-q>", "<cmd>bdelete<CR>", { desc = "Delete tab" })
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all" })
 vim.keymap.set("n", "<C-t>", "<cmd>term<CR>", { desc = "Open terminal" })
 vim.keymap.set("n", "<leader>e", "<cmd>:Ex<CR>", { desc = "Open tree" })

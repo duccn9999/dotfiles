@@ -14,7 +14,7 @@ $username\
     """
     [username]
     show_always = true
-    format = "[  $user@host ](bg:#313244 fg:#cba6f7 bold)"
+    format = "[ $user@host ](bg:#313244 fg:#cba6f7 bold)"
 
     [directory]
     truncation_length = 3
