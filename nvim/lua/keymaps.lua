@@ -1,5 +1,5 @@
-vim.keymap.set("n", "<C-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
-vim.keymap.set("n", "<C-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "gp", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "gn", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<C-q>", "<cmd>bdelete<CR>", { desc = "Delete tab" })
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all" })
 vim.keymap.set("n", "<C-t>", "<cmd>term<CR>", { desc = "Open terminal" })
@@ -8,7 +8,8 @@ vim.keymap.set("n", "<F12>", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap 
 vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true }) end,
 { desc = "Previous diagnostic" })
 vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = "Next diagnostic" })
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+
+vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
 local telescope = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", telescope.find_files, {
   desc = "Telescope find files",

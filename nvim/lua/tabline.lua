@@ -8,13 +8,9 @@ local NO_NAME = "[UNDEFINED]"
 
 
 function M.set_highlights()
-  vim.api.nvim_set_hl(0, "MyBufInactive", { fg = "#5D5C63", bg = "#141414" })
-
-  vim.api.nvim_set_hl(0, "MyBufActive", { fg = "#141414", bg = "#5D5C63", bold = true })
-
-  vim.api.nvim_set_hl(0, "MyBufSeparator", { fg = "#3A964E", bg = "#141414" })
-
-  vim.api.nvim_set_hl(0, "MyBufClose", { fg = "#BF616A", bg = "#5D5C63" })
+  vim.api.nvim_set_hl(0, "MyBufInactive", { fg = "#a6adc8", bg = "#181825" }) -- subtext0 on mantle
+  vim.api.nvim_set_hl(0, "MyBufActive", { fg = "#1e1e2e", bg = "#cba6f7", bold = true }) -- base on lavender
+  vim.api.nvim_set_hl(0, "MyBufSeparator", { fg = "#a6e3a1", bg = "#181825" }) -- green on mantle
 end
 
 local function get_icon(filename, name)
@@ -64,7 +60,7 @@ local function render_buf(bufnr, current)
   local icon = get_icon(filename, name)
 
   local modified = vim.bo[bufnr].modified
-  local modified_icon = modified and " ●" or ""
+  local modified_icon = modified and " [+]" or ""
   local content = icon .. display_name .. modified_icon
   if bufnr == current then
     return table.concat({
@@ -72,9 +68,6 @@ local function render_buf(bufnr, current)
       "%#MyBufActive# ",
 
       content,
-
-      " %#MyBufClose#",
-
 
       " %#MyBufSeparator#",
 
